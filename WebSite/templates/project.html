@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projemiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/">Anasayfa</a></li>
+                <li><a href="/about">Hakkımızda</a></li>
+                <li><a href="/project">Projemiz</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="project" class="section content-section">
+        <div class="content-container">
+            <h2>Bu Ne Uygulaması?</h2>
+            <p>Hukuki Asistan, hukuki konularla ilgili sorularınızı yanıtlayabilen ve size doğru bilgiyi sunabilen bir chatbot uygulamasıdır. Bu uygulama, hukuki sorunlarınızı çözmenize yardımcı olmayı hedeflemektedir.</p>
+            <img src="{{ url_for('static', filename='project.jpg') }}" alt="Projemiz" class="content-image">
+        </div>
+    </div>
+</body>
+</html>

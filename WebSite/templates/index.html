@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoşgeldiniz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/">Anasayfa</a></li>
+                <li><a href="/about">Hakkımızda</a></li>
+                <li><a href="/project">Projemiz</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="home" class="section home-section">
+        <div class="intro-container">
+            <header class="intro-header">
+                <h1>Hukuki Asistan</h1>
+                <p>Size hukuki konularda hızlı ve güvenilir bilgi sunan asistanınız.</p>
+            </header>
+            <div class="start-button">
+                <a href="/chat" class="button">Başla</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

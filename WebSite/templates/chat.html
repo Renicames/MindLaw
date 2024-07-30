@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body class="dark-background">
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="logo">
+                <video id="talkingHeadVideo" class="talking-head" muted aria-label="Talking head video">
+                    <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <button class="reset-button" onclick="resetMemory()" aria-label="Reset Memory">Reset Memory</button>
+        </div>
+        <div class="chat-content">
+            <div class="chat-header">
+                <h1>ChatGPT Interface</h1>
+            </div>
+            <div class="chat-box" id="chatBox">
+                <div class="messages" id="messages">
+                    {% if question and answer %}
+                    <div class="message user-message">
+                        <span class="message-text">{{ question }}</span>
+                    </div>
+                    <div class="message bot-message">
+                        <span class="message-text">{{ answer }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <form id="chat-form" method="POST" style="display: flex; width: 100%;" onsubmit="handleFormSubmit(event)">
+                    <input type="hidden" name="user_id" value="{{ user_id }}">
+                    <textarea class="chat-input" name="question" placeholder="Ask a question..."></textarea>
+                    <button type="submit" aria-label="Send">&#x27A4;</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newMessages = doc.querySelector('.messages').innerHTML;
+                document.getElementById('messages').innerHTML += newMessages;
+
+                const video = document.getElementById('talkingHeadVideo');
+                if (video) {
+                    video.play();
+                    video.loop = false;
+                }
+                form.querySelector('.chat-input').value = ''; // Clear the input field
+                scrollToBottom();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while sending your message.');
+            });
+        }
+
+        function scrollToBottom() {
+            const chatBox = document.getElementById('chatBox');
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function resetMemory() {
+            fetch('/reset', {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('messages').innerHTML = '';
+                    document.getElementById('chat-form').reset();
+                    alert("Memory has been reset.");
+                } else {
+                    alert("An error occurred while resetting memory.");
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const botMessage = document.querySelector('.bot-message .message-text');
+            if (botMessage) {
+                const video = document.getElementById('talkingHeadVideo');
+                if (video) {
+                    video.play();
+                    video.loop = false;
+                }
+                scrollToBottom();
+            }
+        });
+    </script>
+</body>
+</html>
