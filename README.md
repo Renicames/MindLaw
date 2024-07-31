@@ -12,8 +12,7 @@ Veri setimizin oluşturulması süreci aşağıdaki adımları içermektedir:
 
 1. **Veri Toplama**: Türk Anayasası, çeşitli hukuk siteleri ve diğer yasal belgelerden veriler toplandı.
 2. **Veri Temizleme**: Toplanan verilerden gereksiz bilgiler temizlendi ve yapılandırıldı.
-3. **Veri Etiketleme**: Veriler, belirli kategorilere ve konulara göre etiketlendi.
-4. **Veri Seti Oluşturma**: Temizlenmiş ve etiketlenmiş veriler, modelin eğitimi için kullanılacak veri setine dönüştürüldü.
+3. **Veri Seti Oluşturma**: Temizlenmiş ve etiketlenmiş veriler, modelin eğitimi için kullanılacak veri setine dönüştürüldü.
 
 ![Veri Seti Oluşum Süreci](https://user-images.githubusercontent.com/your-data-process-image.png)
 
