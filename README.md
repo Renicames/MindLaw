@@ -2,12 +2,6 @@
 
 MindLaw, T5 modeli kullanılarak Türk hukuku üzerine eğitilmiş bir chatbot projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar vermeyi amaçlamaktadır.
 
-## Web Sitesi
-
-Projemizin web sitesini aşağıdaki görselden inceleyebilirsiniz:
-
-![Web Sitesi](https://user-images.githubusercontent.com/your-website-image.png)
-
 ## Projenin Motivasyonu
 
 Türk hukuk sistemine ilişkin doğru bilgiye hızlı erişim sağlamak amacıyla bu projeyi geliştirdik. Projemiz, Türkiye'nin çeşitli hukuk kaynaklarından elde edilen verilerle oluşturulmuştur. Veri seti, Türk Anayasası ve diğer yasal belgelerden derlenmiştir. Bu kapsamlı veri seti, Türk hukuku üzerine daha önce açık kaynak olarak mevcut olmayan bir veri setini sunmaktadır.
@@ -58,6 +52,11 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
    ```sh
    python run_chatbot.py
    ```
+## Web Sitesi
+
+Projemizin web sitesini aşağıdaki görselden inceleyebilirsiniz:
+
+![Web Sitesi](https://user-images.githubusercontent.com/your-website-image.png)
 
 ## Gelecek Hedefler
 
