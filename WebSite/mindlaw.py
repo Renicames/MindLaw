@@ -3,8 +3,11 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 import os
 import json
+from flask_cors import CORS
+
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
+CORS(app)
 
 # Model and tokenizer loading
 tokenizer = AutoTokenizer.from_pretrained("renicames/t5-base-turkish-MindLaw")
