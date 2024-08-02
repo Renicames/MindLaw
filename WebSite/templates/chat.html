@@ -29,7 +29,7 @@
                         <span class="message-text">{{ question }}</span>
                     </div>
                     <div class="message bot-message">
-                        <span class="message-text">{{ answer }}</span>
+                        <span class="message-text" id="botMessageText">{{ answer }}</span>
                     </div>
                     {% endif %}
                 </div>
@@ -45,6 +45,9 @@
     </div>
 
     <script>
+        let isSpeaking = false;
+        let videoInterval;
+
         function handleFormSubmit(event) {
             event.preventDefault();
             const form = event.target;
@@ -66,6 +69,10 @@
                     video.play();
                     video.loop = false;
                 }
+
+                const answer = doc.getElementById('botMessageText').textContent;
+                speakText(answer, video);
+
                 form.querySelector('.chat-input').value = ''; // Clear the input field
                 scrollToBottom();
             })
@@ -92,6 +99,38 @@
                     alert("An error occurred while resetting memory.");
                 }
             });
+        }
+
+        function speakText(text, video) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'tr-TR';
+
+            speech.onstart = () => {
+                isSpeaking = true;
+                if (video) {
+                    video.play();
+                    videoInterval = setInterval(() => {
+                        if (!isSpeaking) {
+                            clearInterval(videoInterval);
+                            video.pause();
+                            video.currentTime = 0;
+                        } else if (video.ended) {
+                            video.play();
+                        }
+                    }, 1000); // Check every second
+                }
+            };
+
+            speech.onend = () => {
+                isSpeaking = false;
+                if (video) {
+                    clearInterval(videoInterval);
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            };
+
+            window.speechSynthesis.speak(speech);
         }
 
         document.addEventListener('DOMContentLoaded', (event) => {
