@@ -1,20 +1,20 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, url_for
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 import os
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
-# Model ve tokenizer'ı yükleyin
+# Model and tokenizer loading
 tokenizer = AutoTokenizer.from_pretrained("renicames/t5-base-turkish-MindLaw")
 model = AutoModelForSeq2SeqLM.from_pretrained("renicames/t5-base-turkish-MindLaw")
 
-# Kullanıcı verilerini saklayacağımız JSON dosyasının yolu
+# Path to the JSON file for user data
 current_directory = os.path.dirname(os.path.abspath(__file__))
 users_data_file = os.path.join(current_directory, "users_data.json")
 
-# JSON dosyasını yükleme veya oluşturma
+# Load or create the JSON file for user data
 def load_users_data():
     if os.path.exists(users_data_file):
         with open(users_data_file, 'r') as f:
@@ -22,12 +22,12 @@ def load_users_data():
     else:
         return {"users": {}}
 
-# JSON dosyasına kullanıcı verilerini kaydetme
+# Save user data to JSON file
 def save_users_data(data):
     with open(users_data_file, 'w') as f:
         json.dump(data, f)
 
-# Kullanıcı verilerini güncelleme
+# Update user data
 def update_user_data(user_id, new_question):
     users_data = load_users_data()
     if user_id not in users_data["users"]:
@@ -42,12 +42,12 @@ def update_user_data(user_id, new_question):
     users_data["users"][user_id]["questions"].append(new_question)
     save_users_data(users_data)
 
-# Kullanıcı bağlamını güncelleme
+# Update user context
 def update_context(context, new_question):
     updated_context = context + " " + new_question
     return updated_context
 
-# Model kullanarak metin benzerliğini hesaplama
+# Compute text similarity using the model
 def compute_similarity(text1, text2):
     inputs1 = tokenizer(text1, return_tensors='pt', truncation=True, padding=True, max_length=512)
     inputs2 = tokenizer(text2, return_tensors='pt', truncation=True, padding=True, max_length=512)
@@ -62,7 +62,7 @@ def compute_similarity(text1, text2):
     cosine_similarity = torch.nn.functional.cosine_similarity(embeddings1, embeddings2)
     return cosine_similarity.item()
 
-# Soruların ilişkili olup olmadığını belirleme
+# Determine if questions are related
 def is_related(context, new_question, questions):
     if not context:
         return False
@@ -73,7 +73,7 @@ def is_related(context, new_question, questions):
     
     return average_similarity > 0.30
 
-# Soru sorma ve yanıt alma fonksiyonu
+# Ask the chatbot and get a response
 def ask_chatbot(user_id, question):
     users_data = load_users_data()
     if not is_related(users_data["users"].get(user_id, {}).get("context", ""), question, users_data["users"].get(user_id, {}).get("questions", [])):
@@ -87,30 +87,29 @@ def ask_chatbot(user_id, question):
     answer = answer.replace("Cevap:", "").strip()  # Remove "cevap:" from the answer
     return answer
 
-
-# Kullanıcı verilerini sıfırlama
+# Reset user data
 def reset_user_data(user_id):
     users_data = load_users_data()
     if user_id in users_data["users"]:
         users_data["users"][user_id] = {"questions": [], "context": ""}
         save_users_data(users_data)
 
-# Ana sayfa
+# Home page
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Hakkımızda sayfası
+# About page
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-# Projemiz sayfası
+# Project page
 @app.route('/project')
 def project():
     return render_template('project.html')
 
-# Sohbet sayfası
+# Chat page
 @app.route('/chat', methods=['GET', 'POST'])
 def chat():
     user_id = request.form.get('user_id', 'default_user')
@@ -123,7 +122,7 @@ def chat():
 
     return render_template('chat.html', user_id=user_id, question=question, answer=answer)
 
-# Belleği sıfırlama işlemi
+# Reset memory
 @app.route('/reset', methods=['POST'])
 def reset():
     if os.path.exists(users_data_file):
