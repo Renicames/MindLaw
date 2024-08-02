@@ -5,7 +5,6 @@ import os
 import json
 from flask_cors import CORS
 
-
 app = Flask(__name__, template_folder='templates', static_folder='static')
 CORS(app)
 
@@ -74,7 +73,7 @@ def is_related(context, new_question, questions):
     average_similarity = sum(similarities) / len(similarities) if similarities else 0
     print(f"Ortalama Benzerlik: {average_similarity}")
     
-    return average_similarity > 0.30
+    return average_similarity > 0.4
 
 # Ask the chatbot and get a response
 def ask_chatbot(user_id, question):
@@ -87,7 +86,7 @@ def ask_chatbot(user_id, question):
     inputs = tokenizer.encode(user_context, return_tensors='pt')
     outputs = model.generate(inputs, max_length=100, num_return_sequences=1, pad_token_id=tokenizer.eos_token_id)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    answer = answer.replace("Cevap:", "").strip()  # Remove "cevap:" from the answer
+    answer = answer.replace("Cevap:", "").strip()  # Remove "Cevap:" from the answer
     return answer
 
 # Reset user data
