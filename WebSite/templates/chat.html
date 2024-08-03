@@ -8,10 +8,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 </head>
 <body class="dark-background">
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/">Anasayfa</a></li>
+                <li><a href="/about">Hakkımızda</a></li>
+                <li><a href="/project">Projemiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="chat-container">
         <div class="sidebar">
             <div class="logo">
-                <video id="talkingHeadVideo" class="talking-head" muted aria-label="Talking head video">
+                <video id="talkingHeadVideo" class="talking-head rounded-frame" muted aria-label="Talking head video">
                     <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -52,6 +62,14 @@
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
+            const userMessageText = form.querySelector('.chat-input').value;
+
+            if (userMessageText.trim() === "") {
+                return; // Do not send empty messages
+            }
+
+            addUserMessage(userMessageText);
+            showTypingIndicator();
 
             fetch(form.action, {
                 method: form.method,
@@ -61,25 +79,60 @@
             .then(html => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
-                const newMessages = doc.querySelector('.messages').innerHTML;
-                document.getElementById('messages').innerHTML += newMessages;
-
-                const video = document.getElementById('talkingHeadVideo');
-                if (video) {
-                    video.play();
-                    video.loop = false;
-                }
-
                 const answer = doc.getElementById('botMessageText').textContent;
-                speakText(answer, video);
 
-                form.querySelector('.chat-input').value = ''; // Clear the input field
-                scrollToBottom();
+                setTimeout(() => {
+                    removeTypingIndicator();
+                    addBotMessage(answer);
+                }, 3000); // 3 seconds typing indicator delay
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert('An error occurred while sending your message.');
+                removeTypingIndicator();
             });
+
+            form.querySelector('.chat-input').value = ''; // Clear the input field
+        }
+
+        function addUserMessage(message) {
+            const messagesContainer = document.getElementById('messages');
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message';
+            userMessage.innerHTML = `<span class="message-text">${message}</span>`;
+            messagesContainer.appendChild(userMessage);
+            scrollToBottom();
+        }
+
+        function showTypingIndicator() {
+            const messagesContainer = document.getElementById('messages');
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'message bot-message typing-indicator';
+            typingIndicator.innerHTML = 'Chatbot is typing<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+            messagesContainer.appendChild(typingIndicator);
+            scrollToBottom();
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.querySelector('.typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.parentNode.removeChild(typingIndicator);
+            }
+        }
+
+        function addBotMessage(message) {
+            const messagesContainer = document.getElementById('messages');
+            const botMessage = document.createElement('div');
+            botMessage.className = 'message bot-message';
+            botMessage.innerHTML = `<span class="message-text">${message}</span>`;
+            messagesContainer.appendChild(botMessage);
+            scrollToBottom();
+            const video = document.getElementById('talkingHeadVideo');
+            if (video) {
+                video.play();
+                video.loop = false;
+                speakText(message, video);
+            }
         }
 
         function scrollToBottom() {

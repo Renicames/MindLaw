@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hakkımızda</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header class="navbar">
@@ -19,10 +20,50 @@
     </header>
     <div id="about" class="section content-section">
         <div class="content-container">
-            <h2>Biz Kimiz?</h2>
-            <p>Hukuki Asistan ekibi olarak, hukuki danışmanlık ve bilgi sağlama konusunda uzmanlaşmış bir grubuz. Amacımız, kullanıcılarımızın hukuki sorularına hızlı ve doğru cevaplar sunmaktır.</p>
-            <img src="{{ url_for('static', filename='team.jpg') }}" alt="Ekibimiz" class="content-image">
+            <h2>Biz Kimiz ?</h2>
+            <p>Renicames ekibi olarak, yapay zeka alanında çalışmalar ve geliştirmeler yapan dinamik bir ekibiz.</p> 
+            <p>Ekibimiz doğal dil işleme (NLP) teknolojileri üzerine yoğunlaşarak, bu alanda yenilikçi ve etkili ürünler ortaya koymaktadır.</p>
+            <p>Amacımız, dil ve yapay zeka teknolojilerini bir araya getirerek kullanıcı deneyimlerini zenginleştiren ve iş süreçlerini kolaylaştıran çözümler sunmaktır.</p> 
+            <p>Renicames olarak, sektörde öncü bir rol üstlenmeyi ve bu alandaki bilgi birikimimizi sürekli geliştirerek şirketleşmeyi hedeflemekteyiz. Çalışmalarımızla, müşterilerimize ve iş ortaklarımıza katma değer yaratmayı amaçlıyoruz.</p>
+            <h2>Misyonumuz</h2>
+            <p>Yapay zeka ve doğal dil işleme teknolojilerini kullanarak, kullanıcı deneyimlerini iyileştiren ve iş süreçlerini kolaylaştıran yenilikçi çözümler sunmak.</p> 
+            <h2>Vizyonumuz</h2> 
+            <p>Sektörde öncü bir rol üstlenmek ve sürekli gelişerek şirketleşmeyi başarmak, müşterilerimize ve iş ortaklarımıza katma değer yaratmak.</p>
+        
+            <h2>Ekibimiz</h2>
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="social-icons">
+                        <a href="mailto:marzu@firat.edu.tr" aria-label="Email"><i class="fa fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/mehmet-arzu-73538b1b9/" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <h1>Mehmet Arzu</h1>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="social-icons">
+                        <a href="mailto:recepsertac4545@gmail.com" aria-label="Email"><i class="fa fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/recep-bulbul" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <h1>Recep Bülbül</h1>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="social-icons">
+                        <a href="mailto:meryemarpaci8@gmail.com" aria-label="Email"><i class="fa fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/meryem-arpaci" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <h1>Meryem Arpacı</h1>
+                </div>
+            </div>
         </div>
     </div>
+    <footer class="footer">
+        <p>&copy; 2024 Renicames. Tüm hakları saklıdır.</p>
+    </footer>
 </body>
 </html>

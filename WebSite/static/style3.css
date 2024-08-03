@@ -1,12 +1,30 @@
+/* Gradient Background Animation */
+@keyframes gradientBackground {
+    0% {
+        background: #1c1c1c; /* Siyah */
+    }
+    33% {
+        background: #217024; /* Koyu Yeşil */
+    }
+    66% {
+        background: #808080; /* Gri */
+    }
+    100% {
+        background: #1c1c1c; /* Siyah */
+    }
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     color: #ffffff;
     background: linear-gradient(135deg, #1c1c1c, #333333); /* Siyah ve gri gradient arka plan */
-    overflow: hidden; /* Dikey kaydırmayı kaldırır */
+    animation: gradientBackground 3s infinite; /* Geçiş animasyonu */
+    overflow: visible; /* Dikey kaydırmayı kaldırır */
 }
 
+/* Navbar Styles */
 .navbar {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
@@ -14,6 +32,13 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Eklenen gölge efekti */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Hover rengi */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); /* Hover gölge efekti */
 }
 
 .navbar nav ul {
@@ -26,6 +51,7 @@ body {
 
 .navbar nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 .navbar nav ul li a {
@@ -33,28 +59,50 @@ body {
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s;
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+.navbar nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4caf50;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
 .navbar nav ul li a:hover {
-    color: #4caf50;
+    color: #4caf50; /* Hover rengi */
 }
 
+/* Section Styles */
 .section {
-    height: 100vh;
-    padding: 80px 20px; /* Genel padding */
+    min-height: 100vh;
+    padding: 80px 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     transition: opacity 0.5s, transform 0.5s;
-    background: linear-gradient(135deg, #1c1c1c, #333333); /* Siyah ve gri gradient arka plan */
+    background: linear-gradient(135deg, #1c1c1c, #333333);
 }
 
 .home-section {
-    align-items: center; /* Anasayfa içeriğini merkeze hizala */
+    align-items: center;
 }
 
 .home-section .intro-container, .content-section .content-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Hafif şeffaf arka plan */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -63,10 +111,10 @@ body {
 }
 
 .content-section .content-container {
-    text-align: left; /* Metni sola hizala */
-    width: 100%; /* İçeriği genişlet */
-    max-width: 1200px; /* Maksimum genişlik */
-    margin-top: 20px; /* Üstten boşluk ekle */
+    text-align: left;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
 }
 
 @keyframes fadeInUp {
@@ -105,7 +153,7 @@ body {
     background-color: #4caf50;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 30px; /* Köşeleri yuvarlak buton */
+    border-radius: 30px;
     font-size: 18px;
     transition: background-color 0.3s, transform 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -134,6 +182,53 @@ body {
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: #000000;
+    padding: 1rem;
+    border-radius: 8px;
+    width: auto;
+    max-width: 350px; /* Maksimum genişlik ayarı */
+}
+
+.member-info {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons {
+    margin-right: 1rem;
+}
+
+.social-icons a {
+    margin-right: 0.5rem;
+    color: #317739;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+    color: #4caf50;
 }
 
 .footer {
