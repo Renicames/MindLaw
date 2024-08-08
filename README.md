@@ -1,6 +1,6 @@
 # MindLaw - Türk Hukuku Üzerine Eğitilmiş T5 Tabalı Chatbot
 
-MindLaw, T5 modeli kullanılarak Türk hukuku üzerine eğitilmiş bir chatbot projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar vermeyi amaçlamaktadır. Bu projede kullanılan veri seti Renicames tarafından Türkiye'de ilk geliştirilen hukuk soru-cevap veri setidir. 
+MindLaw, T5 modelinin kendi geliştirmiş olduğumuz veri seti ile eğitilerek Türk hukuku üzerine özelleştirilmiş bir  Yapay Zeka Danışmanlık Hizmeti (ChatBot) projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar vermeyi amaçlamaktadır. Bu projede kullanılan veri seti Renicames tarafından ülkemizde ilk kez açık kaynaklı olarak paylaşılan hukuk soru-cevap veri setidir. 
 
 ## Projenin Motivasyonu
 
@@ -12,27 +12,39 @@ Veri setimizin oluşturulması süreci aşağıdaki adımları içermektedir:
 
 1. **Araştırma**: Türk Anayasası, çeşitli hukuk siteleri ve diğer yasal belgeler araştırıldı.
 2. **Veri Kazıma**: Hukuk forumları ve resmi hukuk sitelerinden veriler kazınarak toplandı.
-2. **Veri Toplama**: Resmi sitelerde bulunan pdflerdeki veriler toplandı.
+3. **Veri Toplama**: Resmi sitelerde bulunan pdflerdeki veriler toplandı.
 4. **Veri Temizleme**: Toplanan verilerden tekrar niteliğinde olan bilgiler temizlendi ve yapılandırıldı.
 5. **Veri Seti Oluşturma**: Temizlenmiş veriler, modelin eğitimi için kullanılacak json formatında bir veri setine dönüştürüldü.
 
-![Veri Seti Bağlantısı](https://user-images.githubusercontent.com/your-data-process-image.png)
+**Veri Seti Bağlantısı ->** https://huggingface.co/datasets/Renicames/turkish-law-chatbot
+
 
 ## Modelin Detayları
 
-Proje iki ana bileşenden oluşur: image encoder ve text decoder. Image encoder, verilen resmi 512 uzunluğunda bir vektöre dönüştürür. Bu vektör, resimdeki önemli detayları içerir. Oluşturulan bu vektör, text decoder'a verilmek üzere başka bir model tarafından genişletilir. Text decoder modeli, bu vektöre bakarak yeni bir metin oluşturur. Bu metin, modelin resimde gördüklerini ifade eder.
+**Model Şeması**
 
-| ![Model Schema](https://user-images.githubusercontent.com/your-model-schema.png) |
-|:--:|
-| Model Şeması |
+![image](https://github.com/user-attachments/assets/4d4f656a-ab96-4b8d-9c8d-84cdab56a7dc)
 
-Projede, Türkçe verilerle eğitilmiş GPT-2 modeli kullanılmıştır. Image encoder olarak OpenAI'ın CLIP modeli kullanılmıştır.
+
+
+
+***Model**
+Projede, T5 Base modeli kullanılmıştır.
 
 ## ROUGE Değerleri
 
-Modelimizin performansını ROUGE (Recall-Oriented Understudy for Gisting Evaluation) metrikleri ile değerlendirdik. Aşağıdaki görselde ROUGE-1, ROUGE-2 ve ROUGE-L değerlerini görebilirsiniz:
+Modelimizin performansını ROUGE (Recall-Oriented Understudy for Gisting Evaluation) metrikleri ile değerlendirdik. Aşağıdaki görselde T5 Modellerinin ROUGE-1, ROUGE-2 ve ROUGE-L değerleri verilmiştir :
 
-![ROUGE Değerleri](https://user-images.githubusercontent.com/your-rouge-image.png)
+![image](https://github.com/user-attachments/assets/ce2bcd85-f240-41e6-aed5-7cb833ebc1b0)
+
+T5 Base modeli parametre optimizasyonu skorları aşağıda verilmiştir :
+
+![image](https://github.com/user-attachments/assets/62656a8d-8626-458e-b1fd-396d258389c4)
+
+
+
+
+
 
 ## Kullanım
 
@@ -40,12 +52,11 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
 
 1. Bu projeyi klonlayın:
    ```sh
-   git clone https://github.com/kullanici-adi/mindlaw.git
+   git clone https://github.com/Renicames/MindLaw.git
    ```
 
 2. Gerekli bağımlılıkları yükleyin:
    ```sh
-   cd mindlaw
    pip install -r requirements.txt
    ```
 
@@ -53,18 +64,14 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
    ```sh
    python run_chatbot.py
    ```
-## Web Sitesi
+## Hugging Face Üzerinde Modeli Kullanma
+ 
+https://huggingface.co/spaces/Renicames/MindLaw_Interface
 
-Projemizin web sitesini aşağıdaki görselden inceleyebilirsiniz:
+## Youtube Linki
 
-![Web Sitesi](https://user-images.githubusercontent.com/your-website-image.png)
+https://youtu.be/zFq64Aul54U
 
-## Gelecek Hedefler
-
-1. Veriyi genişletmek.
-2. Modelin videoları daha iyi anlaması için video encoder modeli kullanmak.
-3. Projenin mobil uygulama olarak kullanılabilir hale getirilmesi.
-4. Giyilebilir teknoloji ile projeyi hayata geçirmek.
 
 ## Lisans
 
@@ -72,4 +79,4 @@ Bu proje MIT Lisansı ile lisanslanmıştır. Detaylar için `LICENSE` dosyasın
 
 ---
 
-Bu proje, Türk hukuk sistemine ilişkin doğru bilgiye hızlı erişim sağlamak amacıyla geliştirilmiştir. Umarız ki hukuk öğrencileri, avukatlar ve hukuka ilgi duyan herkes için faydalı olur.
+
