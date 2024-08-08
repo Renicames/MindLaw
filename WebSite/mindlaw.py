@@ -117,6 +117,8 @@ def chat():
     user_id = request.form.get('user_id', 'default_user')
     question = request.form.get('question', '')
 
+    print(f"user_id: {user_id}, question: {question}")
+
     if request.method == 'POST' and question:
         answer = ask_chatbot(user_id, question)
     else:

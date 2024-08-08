@@ -26,11 +26,11 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <button class="reset-button" onclick="resetMemory()" aria-label="Reset Memory">Belleği Sıfırla</button>
+            <button class="reset-button" onclick="resetMemory()" aria-label="Reset Memory">Reset Memory</button>
         </div>
         <div class="chat-content">
             <div class="chat-header">
-                <h1>Mindlaw - Türkiye'nin Hukuk Chatbotu</h1>
+                <h1>MindLaw</h1>
             </div>
             <div class="chat-box" id="chatBox">
                 <div class="messages" id="messages">
@@ -47,7 +47,7 @@
             <div class="chat-input-container">
                 <form id="chat-form" method="POST" style="display: flex; width: 100%;" onsubmit="handleFormSubmit(event)">
                     <input type="hidden" name="user_id" value="{{ user_id }}">
-                    <textarea class="chat-input" name="question" placeholder="Bir soru sor..."></textarea>
+                    <textarea class="chat-input" name="question" placeholder="Ask a question..."></textarea>
                     <button type="submit" aria-label="Send">&#x27A4;</button>
                 </form>
             </div>
@@ -88,7 +88,7 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Mesaj gönderilirken bir sorun çıktı');
+                alert('An error occurred while sending your message.');
                 removeTypingIndicator();
             });
 
@@ -108,7 +108,7 @@
             const messagesContainer = document.getElementById('messages');
             const typingIndicator = document.createElement('div');
             typingIndicator.className = 'message bot-message typing-indicator';
-            typingIndicator.innerHTML = 'Chatbot Yazıyor<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+            typingIndicator.innerHTML = 'Chatbot is typing<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
             messagesContainer.appendChild(typingIndicator);
             scrollToBottom();
         }
@@ -147,9 +147,9 @@
                 if (response.ok) {
                     document.getElementById('messages').innerHTML = '';
                     document.getElementById('chat-form').reset();
-                    alert("Bellek Sıfırlandı");
+                    alert("Memory has been reset.");
                 } else {
-                    alert("Bellek Sıfırlanırken Bir Sorun Çıktı");
+                    alert("An error occurred while resetting memory.");
                 }
             });
         }
