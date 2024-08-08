@@ -57,12 +57,14 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
 
 2. Gerekli bağımlılıkları yükleyin:
    ```sh
+   cd Mindlaw
    pip install -r requirements.txt
    ```
 
 3. Chatbot'u başlatın:
    ```sh
-   python run_chatbot.py
+   cd WebSite
+   python mindlaw.py
    ```
 ## Hugging Face Üzerinde Modeli Kullanma
  
