@@ -26,11 +26,11 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <button class="reset-button" onclick="resetMemory()" aria-label="Reset Memory">Reset Memory</button>
+            <button class="reset-button" onclick="resetMemory()" aria-label="Reset Memory">Hafızayı Sıfırla</button>
         </div>
         <div class="chat-content">
             <div class="chat-header">
-                <h1>MindLaw</h1>
+                <h1>MindLaw - Türkiyenin İlk Hukuk Chatbot'u</h1>
             </div>
             <div class="chat-box" id="chatBox">
                 <div class="messages" id="messages">
@@ -47,7 +47,7 @@
             <div class="chat-input-container">
                 <form id="chat-form" method="POST" style="display: flex; width: 100%;" onsubmit="handleFormSubmit(event)">
                     <input type="hidden" name="user_id" value="{{ user_id }}">
-                    <textarea class="chat-input" name="question" placeholder="Ask a question..."></textarea>
+                    <textarea class="chat-input" name="question" placeholder="Sorunuzu Yönlendiriniz..."></textarea>
                     <button type="submit" aria-label="Send">&#x27A4;</button>
                 </form>
             </div>
@@ -65,7 +65,7 @@
             const userMessageText = form.querySelector('.chat-input').value;
 
             if (userMessageText.trim() === "") {
-                return; // Do not send empty messages
+                return; 
             }
 
             addUserMessage(userMessageText);
@@ -84,7 +84,7 @@
                 setTimeout(() => {
                     removeTypingIndicator();
                     addBotMessage(answer);
-                }, 3000); // 3 seconds typing indicator delay
+                }, 3000); 
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -92,7 +92,7 @@
                 removeTypingIndicator();
             });
 
-            form.querySelector('.chat-input').value = ''; // Clear the input field
+            form.querySelector('.chat-input').value = '';
         }
 
         function addUserMessage(message) {
@@ -170,7 +170,7 @@
                         } else if (video.ended) {
                             video.play();
                         }
-                    }, 1000); // Check every second
+                    }, 1000);
                 }
             };
 
