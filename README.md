@@ -28,7 +28,7 @@ Veri setimizin oluşturulması süreci aşağıdaki adımları içermektedir:
 
 
 
-***Model**
+**Model**
 Projede, T5 Base modeli kullanılmıştır.
 
 ## ROUGE Değerleri
