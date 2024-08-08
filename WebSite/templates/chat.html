@@ -23,7 +23,7 @@
             <div class="logo">
                 <video id="talkingHeadVideo" class="talking-head rounded-frame" muted aria-label="Talking head video">
                     <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
+                    Tarayıcınız video etiketini desteklemiyor.
                 </video>
             </div>
             <button class="reset-button" onclick="resetMemory()" aria-label="Reset Memory">Hafızayı Sıfırla</button>
@@ -108,7 +108,7 @@
             const messagesContainer = document.getElementById('messages');
             const typingIndicator = document.createElement('div');
             typingIndicator.className = 'message bot-message typing-indicator';
-            typingIndicator.innerHTML = 'Chatbot is typing<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+            typingIndicator.innerHTML = 'Yazıyor<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
             messagesContainer.appendChild(typingIndicator);
             scrollToBottom();
         }
@@ -147,9 +147,9 @@
                 if (response.ok) {
                     document.getElementById('messages').innerHTML = '';
                     document.getElementById('chat-form').reset();
-                    alert("Memory has been reset.");
+                    alert("Hafıza sıfırlandı.");
                 } else {
-                    alert("An error occurred while resetting memory.");
+                    alert("Bellek sıfırlanırken bir hata oluştu.");
                 }
             });
         }
