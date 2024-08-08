@@ -1,20 +1,22 @@
-# MindLaw - Türk Hukuku Üzerine Eğitilmiş Chatbot
+# MindLaw - Türk Hukuku Üzerine Eğitilmiş T5 Tabalı Chatbot
 
-MindLaw, T5 modeli kullanılarak Türk hukuku üzerine eğitilmiş bir chatbot projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar vermeyi amaçlamaktadır.
+MindLaw, T5 modeli kullanılarak Türk hukuku üzerine eğitilmiş bir chatbot projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar vermeyi amaçlamaktadır. Bu projede kullanılan veri seti Renicames tarafından Türkiye'de ilk geliştirilen hukuk soru-cevap veri setidir. 
 
 ## Projenin Motivasyonu
 
-Türk hukuk sistemine ilişkin doğru bilgiye hızlı erişim sağlamak amacıyla bu projeyi geliştirdik. Projemiz, Türkiye'nin çeşitli hukuk kaynaklarından elde edilen verilerle oluşturulmuştur. Veri seti, Türk Anayasası ve diğer yasal belgelerden derlenmiştir. Bu kapsamlı veri seti, Türk hukuku üzerine daha önce açık kaynak olarak mevcut olmayan bir veri setini sunmaktadır.
+Türk hukuk sistemine ilişkin doğru bilgiye hızlı erişim sağlamak amacıyla bu projeyi geliştirdik. Projemiz, Türkiye'nin çeşitli hukuk kaynaklarından elde edilen verilerle oluşturulmuştur. Veri seti, Türk Anayasası ve diğer yasal belgelerden derlenmiştir. Bu kapsamlı veri seti, Türk hukuku üzerine daha önce açık kaynak olarak mevcut olmayan bir veri setini sunmaktadır. Bu anlamda bir ilk olan veri setimiz, ülkemizde hukuk alanında yapay zekanın kullanılması yönünde atılan bir adımdır.
 
 ## Veri Setinin Oluşum Süreci
 
 Veri setimizin oluşturulması süreci aşağıdaki adımları içermektedir:
 
-1. **Veri Toplama**: Türk Anayasası, çeşitli hukuk siteleri ve diğer yasal belgelerden veriler toplandı.
-2. **Veri Temizleme**: Toplanan verilerden gereksiz bilgiler temizlendi ve yapılandırıldı.
-3. **Veri Seti Oluşturma**: Temizlenmiş ve etiketlenmiş veriler, modelin eğitimi için kullanılacak veri setine dönüştürüldü.
+1. **Araştırma**: Türk Anayasası, çeşitli hukuk siteleri ve diğer yasal belgeler araştırıldı.
+2. **Veri Kazıma**: Hukuk forumları ve resmi hukuk sitelerinden veriler kazınarak toplandı.
+2. **Veri Toplama**: Resmi sitelerde bulunan pdflerdeki veriler toplandı.
+4. **Veri Temizleme**: Toplanan verilerden tekrar niteliğinde olan bilgiler temizlendi ve yapılandırıldı.
+5. **Veri Seti Oluşturma**: Temizlenmiş veriler, modelin eğitimi için kullanılacak json formatında bir veri setine dönüştürüldü.
 
-![Veri Seti Oluşum Süreci](https://user-images.githubusercontent.com/your-data-process-image.png)
+![Veri Seti Bağlantısı](https://user-images.githubusercontent.com/your-data-process-image.png)
 
 ## Modelin Detayları
 
