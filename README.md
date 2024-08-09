@@ -2,6 +2,9 @@
 
 **MindLaw**, T5 modelinin Renicames tarafından geliştirilmiş özel bir veri setiyle eğitilerek Türk hukukuna odaklanmış bir Yapay Zeka Danışmanlık Hizmeti (ChatBot) projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar sunmayı amaçlamaktadır.
 
+## Bu Projeye Katkıda Bulunma
+Projemize katkıda bulunmak istiyorsanız, lütfen [CONTRIBUTING](https://github.com/Renicames/MindLaw/blob/main/CONTRIBUTING.rst) dosyasına göz atın.
+
 ## Projenin Amacı ve Motivasyonu
 
 MindLaw, Türk hukuk sistemine dair doğru ve hızlı bilgiye erişim sağlamak amacıyla geliştirilmiştir. Türkiye’nin çeşitli hukuk kaynaklarından derlenen verilerle oluşturulan bu proje, kullanıcıların hukuki sorularına etkin çözümler sunmayı hedeflemektedir. Projede kullanılan veri seti, Renicames tarafından ülkemizde ilk kez açık kaynak olarak paylaşılan, Türk hukuku üzerine özel olarak hazırlanmış bir soru-cevap veri setidir. Bu veri seti, Türk Anayasası ve diğer yasal belgelerden derlenmiş olup, Türkiye'de hukuk alanında yapay zeka kullanımı için önemli bir adım teşkil etmektedir.
