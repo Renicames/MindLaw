@@ -11,10 +11,9 @@ Türk hukuk sistemine ilişkin doğru bilgiye hızlı erişim sağlamak amacıyl
 Veri setimizin oluşturulması süreci aşağıdaki adımları içermektedir:
 
 1. **Araştırma**: Türk Anayasası, çeşitli hukuk siteleri ve diğer yasal belgeler araştırıldı.
-2. **Veri Kazıma**: Hukuk forumları ve resmi hukuk sitelerinden veriler kazınarak toplandı.
-3. **Veri Toplama**: Resmi sitelerde bulunan pdflerdeki veriler toplandı.
-4. **Veri Temizleme**: Toplanan verilerden tekrar niteliğinde olan bilgiler temizlendi ve yapılandırıldı.
-5. **Veri Seti Oluşturma**: Temizlenmiş veriler, modelin eğitimi için kullanılacak json formatında bir veri setine dönüştürüldü.
+2. **Veri Toplama**: Resmi sitelerde bulunan veriler toplandı.
+3. **Veri Temizleme**: Toplanan verilerden tekrar niteliğinde olan bilgiler temizlendi ve yapılandırıldı.
+4. **Veri Seti Oluşturma**: Temizlenmiş veriler, modelin eğitimi için kullanılacak json formatında bir veri setine dönüştürüldü.
 
 **Veri Seti Bağlantısı ->** https://huggingface.co/datasets/Renicames/turkish-law-chatbot
 
@@ -29,6 +28,7 @@ Veri setimizin oluşturulması süreci aşağıdaki adımları içermektedir:
 
 
 **Model**
+
 Projede, T5 Base modeli kullanılmıştır.
 
 ## ROUGE Değerleri
