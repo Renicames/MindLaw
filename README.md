@@ -1,47 +1,41 @@
-# MindLaw - Türk Hukuku Üzerine Eğitilmiş T5 Tabalı Chatbot
+# MindLaw - Türk Hukuku Üzerine Eğitilmiş T5 Tabanlı Chatbot
 
-MindLaw, T5 modelinin kendi geliştirmiş olduğumuz veri seti ile eğitilerek Türk hukuku üzerine özelleştirilmiş bir  Yapay Zeka Danışmanlık Hizmeti (ChatBot) projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar vermeyi amaçlamaktadır. Bu projede kullanılan veri seti Renicames tarafından ülkemizde ilk kez açık kaynaklı olarak paylaşılan hukuk soru-cevap veri setidir. 
+**MindLaw**, T5 modelinin Renicames tarafından geliştirilmiş özel bir veri setiyle eğitilerek Türk hukukuna odaklanmış bir Yapay Zeka Danışmanlık Hizmeti (ChatBot) projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar sunmayı amaçlamaktadır.
 
-## Projenin Motivasyonu
+## Projenin Amacı ve Motivasyonu
 
-Türk hukuk sistemine ilişkin doğru bilgiye hızlı erişim sağlamak amacıyla bu projeyi geliştirdik. Projemiz, Türkiye'nin çeşitli hukuk kaynaklarından elde edilen verilerle oluşturulmuştur. Veri seti, Türk Anayasası ve diğer yasal belgelerden derlenmiştir. Bu kapsamlı veri seti, Türk hukuku üzerine daha önce açık kaynak olarak mevcut olmayan bir veri setini sunmaktadır. Bu anlamda bir ilk olan veri setimiz, ülkemizde hukuk alanında yapay zekanın kullanılması yönünde atılan bir adımdır.
+MindLaw, Türk hukuk sistemine dair doğru ve hızlı bilgiye erişim sağlamak amacıyla geliştirilmiştir. Türkiye’nin çeşitli hukuk kaynaklarından derlenen verilerle oluşturulan bu proje, kullanıcıların hukuki sorularına etkin çözümler sunmayı hedeflemektedir. Projede kullanılan veri seti, Renicames tarafından ülkemizde ilk kez açık kaynak olarak paylaşılan, Türk hukuku üzerine özel olarak hazırlanmış bir soru-cevap veri setidir. Bu veri seti, Türk Anayasası ve diğer yasal belgelerden derlenmiş olup, Türkiye'de hukuk alanında yapay zeka kullanımı için önemli bir adım teşkil etmektedir.
 
-## Veri Setinin Oluşum Süreci
+## Veri Seti Geliştirme Süreci
 
-Veri setimizin oluşturulması süreci aşağıdaki adımları içermektedir:
+Veri setimizin geliştirilme süreci aşağıdaki adımları içermektedir:
 
-1. **Araştırma**: Türk Anayasası, çeşitli hukuk siteleri ve diğer yasal belgeler araştırıldı.
-2. **Veri Toplama**: Resmi sitelerde bulunan veriler toplandı.
-3. **Veri Temizleme**: Toplanan verilerden tekrar niteliğinde olan bilgiler temizlendi ve yapılandırıldı.
-4. **Veri Seti Oluşturma**: Temizlenmiş veriler, modelin eğitimi için kullanılacak json formatında bir veri setine dönüştürüldü.
+1. **Araştırma**: Türk Anayasası, çeşitli hukuk siteleri ve diğer yasal belgeler kapsamlı bir şekilde incelenmiştir.
+2. **Veri Toplama**: Resmi kaynaklardan hukuki veriler titizlikle toplanmıştır.
+3. **Veri Temizleme**: Toplanan veriler, tekrar eden bilgilerden arındırılarak yapılandırılmıştır.
+4. **Veri Seti Oluşturma**: Temizlenmiş veriler, modelin eğitimi için kullanılmak üzere JSON formatında bir veri setine dönüştürülmüştür.
 
-**Veri Seti Bağlantısı ->** https://huggingface.co/datasets/Renicames/turkish-law-chatbot
+Veri Setine erişmek için [buraya tıklayabilirsiniz](https://huggingface.co/datasets/Renicames/turkish-law-chatbot).
 
-
-## Modelin Detayları
+## Model Detayları
 
 **Model Şeması**
 
-![image](https://github.com/user-attachments/assets/4d4f656a-ab96-4b8d-9c8d-84cdab56a7dc)
+![Model Şeması](https://github.com/user-attachments/assets/4d4f656a-ab96-4b8d-9c8d-84cdab56a7dc)
 
+**Model Bilgisi**
 
+Projede, T5 Base modeli kullanılmıştır ve bu model, hukuki veri seti ile eğitilerek özelleştirilmiştir.
 
+## Performans Değerlendirmesi
 
-**Model**
+Modelimizin performansı ROUGE (Recall-Oriented Understudy for Gisting Evaluation) metrikleri ile değerlendirilmiştir. Aşağıdaki görselde, T5 Base modelinin ROUGE-1, ROUGE-2 ve ROUGE-L değerleri gösterilmektedir:
 
-Projede, T5 Base modeli kullanılmıştır.
+![ROUGE Değerleri](https://github.com/user-attachments/assets/ce2bcd85-f240-41e6-aed5-7cb833ebc1b0)
 
-## ROUGE Değerleri
+T5 Base modelinin parametre optimizasyonu sonuçları ise aşağıda verilmiştir:
 
-Modelimizin performansını ROUGE (Recall-Oriented Understudy for Gisting Evaluation) metrikleri ile değerlendirdik. Aşağıdaki görselde T5 Modellerinin ROUGE-1, ROUGE-2 ve ROUGE-L değerleri verilmiştir :
-
-![image](https://github.com/user-attachments/assets/ce2bcd85-f240-41e6-aed5-7cb833ebc1b0)
-
-T5 Base modeli parametre optimizasyonu skorları aşağıda verilmiştir :
-
-![image](https://github.com/user-attachments/assets/62656a8d-8626-458e-b1fd-396d258389c4)
-
-
+![Parametre Optimizasyonu](https://github.com/user-attachments/assets/62656a8d-8626-458e-b1fd-396d258389c4)
 
 
 
@@ -68,11 +62,14 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
    ```
 ## Hugging Face Üzerinde Modeli Kullanma
  
-https://huggingface.co/spaces/Renicames/MindLaw_Interface
+
+Modeli hugging face üzerinde test etmek için [tıklayın.](https://huggingface.co/spaces/Renicames/MindLaw_Interface)
 
 ## Youtube Linki
 
-https://youtu.be/zFq64Aul54U
+Projemizin tanıtım videosunu izlemek için [tıklayın.](https://youtu.be/zFq64Aul54U)
+
+
 
 
 ## Lisans
