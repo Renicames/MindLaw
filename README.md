@@ -1,6 +1,6 @@
 # MindLaw - Türk Hukuku Üzerine Eğitilmiş T5 Tabanlı Chatbot
 
-**MindLaw**, T5 modelinin Renicames tarafından geliştirilmiş özel bir veri setiyle eğitilerek Türk hukukuna odaklanmış bir Yapay Zeka Danışmanlık Hizmeti (ChatBot) projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar sunmayı amaçlamaktadır.
+**MindLaw**, T5 modelinin Renicames tarafından geliştirilmiş 14,854 veriden oluşan bir veri setiyle eğitilerek hazırlanmış bir Yapay Zeka Danışmanlık Hizmeti (ChatBot) projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar sunmayı amaçlamaktadır.
 
 ## Bu Projeye Katkıda Bulunma
 Projemize katkıda bulunmak istiyorsanız, lütfen [CONTRIBUTING](https://github.com/Renicames/MindLaw/blob/main/CONTRIBUTING.rst) dosyasına göz atın.
@@ -21,7 +21,7 @@ Veri setimizin geliştirilme süreci aşağıdaki adımları içermektedir:
 1. **Araştırma**: Türk Anayasası, çeşitli hukuk siteleri ve diğer yasal belgeler kapsamlı bir şekilde incelenmiştir.
 2. **Veri Toplama**: Resmi kaynaklardan hukuki veriler titizlikle toplanmıştır.
 3. **Veri Temizleme**: Toplanan veriler, tekrar eden bilgilerden arındırılarak yapılandırılmıştır.
-4. **Veri Seti Oluşturma**: Temizlenmiş veriler, modelin eğitimi için kullanılmak üzere JSON formatında bir veri setine dönüştürülmüştür.
+4. **Veri Seti Oluşturma**: Temizlenmiş veriler, modelin eğitimi için kullanılmak üzere JSON formatında bir veri setine dönüştürülmüştür. Veri setinde toplam 14,854 soru-cevap çifti bulunmaktadır.
 
 Veri Setine erişmek için [buraya tıklayabilirsiniz](https://huggingface.co/datasets/Renicames/turkish-law-chatbot).
 
@@ -33,7 +33,7 @@ Veri Setine erişmek için [buraya tıklayabilirsiniz](https://huggingface.co/da
 
 **Model Bilgisi**
 
-Projede, T5 Base modeli kullanılmıştır ve bu model, hukuki veri seti ile eğitilerek özelleştirilmiştir.
+Projede, T5 Base modeli kullanılmıştır ve bu model, hukuk veri seti ile eğitilerek özelleştirilmiştir.
 
 ## Performans Değerlendirmesi
 
