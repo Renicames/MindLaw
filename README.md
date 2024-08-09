@@ -9,6 +9,11 @@ Projemize katkıda bulunmak istiyorsanız, lütfen [CONTRIBUTING](https://github
 
 MindLaw, Türk hukuk sistemine dair doğru ve hızlı bilgiye erişim sağlamak amacıyla geliştirilmiştir. Türkiye’nin çeşitli hukuk kaynaklarından derlenen verilerle oluşturulan bu proje, kullanıcıların hukuki sorularına etkin çözümler sunmayı hedeflemektedir. Projede kullanılan veri seti, Renicames tarafından ülkemizde ilk kez açık kaynak olarak paylaşılan, Türk hukuku üzerine özel olarak hazırlanmış bir soru-cevap veri setidir. Bu veri seti, Türk Anayasası ve diğer yasal belgelerden derlenmiş olup, Türkiye'de hukuk alanında yapay zeka kullanımı için önemli bir adım teşkil etmektedir.
 
+
+## Proje Arayüzü 
+![image](https://github.com/user-attachments/assets/51c19e18-1c27-486b-88dd-132e0ce31998)
+
+
 ## Veri Seti Geliştirme Süreci
 
 Veri setimizin geliştirilme süreci aşağıdaki adımları içermektedir:
