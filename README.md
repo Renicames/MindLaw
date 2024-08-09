@@ -77,7 +77,7 @@ https://youtu.be/zFq64Aul54U
 
 ## Lisans
 
-Bu proje MIT Lisansı ile lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
+Bu proje Apache 2.0 Lisansı ile lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
 
 ---
 
