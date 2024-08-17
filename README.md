@@ -68,10 +68,7 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
    cd WebSite
    python mindlaw.py
    ```
-## Hugging Face Üzerinde Modeli Kullanma
- 
 
-Modeli hugging face üzerinde test etmek için [tıklayın.](https://huggingface.co/spaces/Renicames/MindLaw_Interface)
 
 ## Youtube Linki
 
