@@ -1,9 +1,14 @@
+![image](https://github.com/user-attachments/assets/44ee3e3a-5007-4a3b-a4b3-c70a1188ab4e)
+
+
+
 # MindLaw - Türk Hukuku Üzerine Eğitilmiş T5 Tabanlı Chatbot
 
 **MindLaw**, T5 modelinin Renicames tarafından geliştirilmiş 14,854 veriden oluşan bir veri setiyle eğitilerek hazırlanmış bir Yapay Zeka Danışmanlık Hizmeti (ChatBot) projesidir. Bu proje, kullanıcıların Türk hukuku ile ilgili sorularına doğru ve hızlı yanıtlar sunmayı amaçlamaktadır.
 
 ## Bu Projeye Katkıda Bulunma
 Projemize katkıda bulunmak istiyorsanız, lütfen [CONTRIBUTING](https://github.com/Renicames/MindLaw/blob/main/CONTRIBUTING.rst) dosyasına göz atın.
+
 
 ## Projenin Amacı ve Motivasyonu
 
