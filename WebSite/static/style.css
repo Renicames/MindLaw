@@ -1,28 +1,27 @@
-/* Gradient Background Animation */
+
 @keyframes gradientBackground {
     0% {
-        background: #1c1c1c; /* Siyah */
+        background: #1c1c1c; 
     }
     33% {
-        background: #217024; /* Koyu Yeşil */
+        background: #222f22; 
     }
     66% {
-        background: #808080; /* Gri */
+        background: #272a28; 
     }
     100% {
-        background: #1c1c1c; /* Siyah */
+        background: #1c1c1c; 
     }
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #121212;
     margin: 0;
     padding: 0;
     color: #ffffff;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    background: linear-gradient(135deg, #1c1c1c, #203832); 
+    animation: gradientBackground 8.5s infinite; 
+    overflow: visible; /* Dikey kaydırma */
 }
 
 /* Navbar Styles */

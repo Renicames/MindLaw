@@ -1,16 +1,16 @@
-/* Gradient Background Animation */
+
 @keyframes gradientBackground {
     0% {
-        background: #1c1c1c; /* Siyah */
+        background: #1c1c1c; 
     }
     33% {
-        background: #217024; /* Koyu Yeşil */
+        background: #222f22; 
     }
     66% {
-        background: #808080; /* Gri */
+        background: #272a28; 
     }
     100% {
-        background: #1c1c1c; /* Siyah */
+        background: #1c1c1c; 
     }
 }
 
@@ -19,12 +19,12 @@ body {
     margin: 0;
     padding: 0;
     color: #ffffff;
-    background: linear-gradient(135deg, #1c1c1c, #333333); /* Siyah ve gri gradient arka plan */
-    animation: gradientBackground 3s infinite; /* Geçiş animasyonu */
-    overflow: visible; /* Dikey kaydırmayı kaldırır */
+    background: linear-gradient(135deg, #1c1c1c, #203832); 
+    animation: gradientBackground 7s infinite; 
+    overflow: visible; /* Dikey kaydırma */
 }
 
-/* Navbar Styles */
+/* Navbar  */
 .navbar {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
@@ -32,13 +32,13 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Eklenen gölge efekti */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .navbar:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Hover rengi */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); /* Hover gölge efekti */
+    background-color: rgba(0, 0, 0, 0.9); /* Hover*/
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); 
 }
 
 .navbar nav ul {
@@ -83,18 +83,17 @@ body {
 }
 
 .navbar nav ul li a:hover {
-    color: #4caf50; /* Hover rengi */
+    color: #4caf50; /* Hover*/
 }
 
-/* Section Styles */
 .section {
     min-height: 100vh;
     padding: 80px 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    transition: opacity 0.5s, transform 0.5s;
-    background: linear-gradient(135deg, #1c1c1c, #333333);
+    transition: opacity 0.2s, transform 2s;
+    background: linear-gradient(135deg, #1c1c1c, #1e2c21);
 }
 
 .home-section {
@@ -208,7 +207,7 @@ body {
     padding: 1rem;
     border-radius: 8px;
     width: auto;
-    max-width: 350px; /* Maksimum genişlik ayarı */
+    max-width: 350px; 
 }
 
 .member-info {
