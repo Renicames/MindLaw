@@ -2,3 +2,7 @@ flask
 transformers
 torch
 flask_cors
+json
+peft
+trl
+datasets
